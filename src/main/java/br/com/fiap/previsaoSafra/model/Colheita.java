@@ -7,14 +7,14 @@ import java.util.List;
 @Entity
 public class Colheita {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
     private String tipo;
     private String estacaoDoAno;
-    @OneToMany(mappedBy = "colheita")
+    @OneToMany(mappedBy = "colheita", cascade = CascadeType.ALL)
     private List<DadosProducao> dadosProducao;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Fazenda fazenda;
 
     public Long getId() {

@@ -1,28 +1,25 @@
 package br.com.fiap.previsaoSafra.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
 public class Fazenda {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String dono;
-    private Double latitude;
-    private Double longitude;
+    private String latitude;
+    private String longitude;
     private Integer tamanho;
 
     //1 fazenda pode ter varias culturas
-    @OneToMany(mappedBy = "fazenda")
+    @OneToMany(mappedBy = "fazenda", cascade = CascadeType.ALL)
     private List<Colheita> listaColheita;
 
     //1 fazenda pode ter varios historicos de dados climaticos
-    @OneToMany(mappedBy = "fazenda")
+    @OneToMany(mappedBy = "fazenda", cascade = CascadeType.ALL)
     private List<DadosClimaticos> dadosClimaticos;
 
     public Long getId() {
@@ -41,19 +38,19 @@ public class Fazenda {
         this.dono = dono;
     }
 
-    public Double getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(Double latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
-    public Double getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(Double longitude) {
+    public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
 

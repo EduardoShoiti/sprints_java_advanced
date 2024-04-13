@@ -11,8 +11,8 @@ import java.util.List;
 public class FazendaDTO {
     private Long id;
     private String dono;
-    private Double latitude;
-    private Double longitude;
+    private String latitude;
+    private String longitude;
     private Integer tamanho;
     private List<Colheita> listaColheita;
     private List<DadosClimaticos> dadosClimaticos;
@@ -33,19 +33,19 @@ public class FazendaDTO {
         this.dono = dono;
     }
 
-    public Double getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(Double latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
-    public Double getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(Double longitude) {
+    public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
 

@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Entity
 public class Predicao {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne
     @JoinColumn(name = "colheita_id")

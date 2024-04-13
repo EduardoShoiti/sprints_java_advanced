@@ -6,10 +6,12 @@ import br.com.fiap.previsaoSafra.model.Colheita;
 import br.com.fiap.previsaoSafra.model.Fazenda;
 import br.com.fiap.previsaoSafra.repository.ColheitaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ColheitaService {
     @Autowired
     private ColheitaRepository colheitaRepository;
@@ -38,8 +40,18 @@ public class ColheitaService {
 
     public List<Colheita> listarColheitas() { return colheitaRepository.findAll(); }
 
-    public List<Colheita> listarFazendaPorAtributo(String nome, String tipo, String estacaoDoAno) {
+    public List<Colheita> listarColheitaPorAtributo(String nome, String tipo, String estacaoDoAno) {
         return colheitaRepository.findByNomeContainingOrTipoContainingOrEstacaoDoAnoContaining(nome, tipo, estacaoDoAno);
+    }
+
+//    Deletar Colheita
+
+    public void removerColheita(Long id) {
+        if (colheitaRepository.existsById(id)) {
+            colheitaRepository.deleteById(id);
+        } else {
+            throw new RuntimeException("Colheita não encontrada com o ID: " + id);
+        }
     }
 
 }

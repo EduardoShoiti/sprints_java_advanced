@@ -1,9 +1,6 @@
 package br.com.fiap.previsaoSafra.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -15,8 +12,10 @@ public class Colheita {
     private String nome;
     private String tipo;
     private String estacaoDoAno;
-    @OneToMany(mappedBy = "Colheita")
+    @OneToMany(mappedBy = "colheita")
     private List<DadosProducao> dadosProducao;
+    @ManyToOne
+    private Fazenda fazenda;
 
     public Long getId() {
         return id;
@@ -56,5 +55,13 @@ public class Colheita {
 
     public void setDadosProducao(List<DadosProducao> dadosProducao) {
         this.dadosProducao = dadosProducao;
+    }
+
+    public Fazenda getFazenda() {
+        return fazenda;
+    }
+
+    public void setFazenda(Fazenda fazenda) {
+        this.fazenda = fazenda;
     }
 }

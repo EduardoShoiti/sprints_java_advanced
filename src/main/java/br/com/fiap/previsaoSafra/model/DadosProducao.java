@@ -3,6 +3,7 @@ package br.com.fiap.previsaoSafra.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,6 +13,7 @@ public class DadosProducao {
     @Id
     @GeneratedValue
     private Long id;
+    @ManyToOne
     private Colheita colheita;
     private LocalDate dataColheita;
     private Integer qtdProduzida;

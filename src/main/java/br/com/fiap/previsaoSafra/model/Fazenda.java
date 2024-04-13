@@ -17,11 +17,12 @@ public class Fazenda {
     private Double longitude;
     private Integer tamanho;
 
-    @OneToMany(mappedBy = "fazenda")
     //1 fazenda pode ter varias culturas
-    private List<Colheita> listaColheita;
     @OneToMany(mappedBy = "fazenda")
+    private List<Colheita> listaColheita;
+
     //1 fazenda pode ter varios historicos de dados climaticos
+    @OneToMany(mappedBy = "fazenda")
     private List<DadosClimaticos> dadosClimaticos;
 
     public Long getId() {

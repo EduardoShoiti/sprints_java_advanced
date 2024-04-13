@@ -3,6 +3,7 @@ package br.com.fiap.previsaoSafra.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 import java.time.LocalDate;
 
@@ -15,6 +16,9 @@ public class DadosClimaticos {
     private Double temperaturaGraus;
     private Integer umidade;
     private Double precipitacao;
+
+    @ManyToOne
+    private Fazenda fazenda;
 
     public Long getId() {
         return id;
@@ -55,4 +59,13 @@ public class DadosClimaticos {
     public void setPrecipitacao(Double precipitacao) {
         this.precipitacao = precipitacao;
     }
+
+    public Fazenda getFazenda() {
+        return fazenda;
+    }
+
+    public void setFazenda(Fazenda fazenda) {
+        this.fazenda = fazenda;
+    }
+
 }

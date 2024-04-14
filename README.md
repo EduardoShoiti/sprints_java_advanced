@@ -47,6 +47,10 @@
 
 <hr />
 
+![Diagrama de clases]()
+
+<hr />
+
 ### Listagem de todos os Endpoints
 
 **Fazenda:**
@@ -80,6 +84,10 @@
 - (UTILIZAR PARA PUT) localhost:8080/api/predicao/{id}
 - (UTILIZAR O DELETE) localhost:8080/api/predicao/{id} 
 
+
+<hr />
+
+[Json de todos os testes Postman](https://github.com/EduardoShoiti/sprints_java_advanced/blob/master/Endpoint%20-%20Sprint%201.postman_collection.json)
 
 <hr />
 

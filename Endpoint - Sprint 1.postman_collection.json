@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "b6ee3c94-9da5-4104-9963-f5ab14df8cf5",
+		"name": "Endpoint - Sprint 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31086050"
+	},
+	"item": [
+		{
+			"name": "Fazenda",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/fazenda",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"fazenda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dono\": \"Eduardouuu\",\r\n    \"latitude\": \"-23.5625966\",\r\n    \"longitude\": \"-46.6497343,15\",\r\n    \"tamanho\": 30,\r\n    \"listaColheita\": [\r\n        {\r\n            \"nome\": \"Milho Verde\",\r\n            \"tipo\": \"grão\",\r\n            \"estacaoDoAno\": \"Verão\",\r\n            \"dadosProducao\": [\r\n                {\"dataColheita\": \"2023-12-12\", \"qtdProduzida\": 2, \"listaFertilizantes\": [\"nitrogênio\", \"fósforo\"]}\r\n            ]\r\n        }\r\n    ],\r\n    \"dadosClimaticos\": [\r\n        {\r\n            \"dataLocal\": \"2023-12-12\",\r\n            \"temperaturaGraus\": 27,\r\n            \"umidade\": 12,\r\n            \"precipitacao\": 7.4\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/fazenda",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"fazenda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dono\": \"Eduardo\",\r\n    \"latitude\": \"-23.5625966\",\r\n    \"longitude\": \"-46.6497343,15\",\r\n    \"tamanho\": 30,\r\n    \"listaColheita\": [\r\n        {\r\n            \"nome\": \"Milho Verde\",\r\n            \"tipo\": \"grão\",\r\n            \"estacaoDoAno\": \"Verão\",\r\n            \"dadosProducao\": [\r\n                {\"dataColheita\": \"2024-01-02\", \"qtdProduzida\": 2, \"listaFertilizantes\": [\"nitrogênio\", \"fósforo\"]}\r\n            ]\r\n        }\r\n    ],\r\n    \"dadosClimaticos\": [\r\n        {\r\n            \"dataLocal\": \"2023-12-12\",\r\n            \"temperaturaGraus\": 27,\r\n            \"umidade\": 12,\r\n            \"precipitacao\": 7.4\r\n        },\r\n        {\r\n            \"dataLocal\": \"2024-03-04\",\r\n            \"temperaturaGraus\": 30,\r\n            \"umidade\": 12,\r\n            \"precipitacao\": 7.4\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/fazenda/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"fazenda",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/fazenda/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"fazenda",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Colheita",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/colheita",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"colheita"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/colheita/buscar?nome=Arroz",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"colheita",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Arroz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get tipo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/colheita/buscar?tipo=grão",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"colheita",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "tipo",
+									"value": "grão"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get estacaoDoAno",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/colheita/buscar?estacaoDoAno=Outono",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"colheita",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "estacaoDoAno",
+									"value": "Outono"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Trigo bom\",\r\n    \"tipo\": \"grão\",\r\n    \"estacaoDoAno\": \"Outono\",\r\n    \"dadosProducao\": [\r\n        {\"dataColheita\": \"2022-05-10\", \"qtdProduzida\": 20, \"listaFertilizantes\": [\"ureia\"]}\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/colheita",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"colheita"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Arroz\",\r\n    \"tipo\": \"grão\",\r\n    \"estacaoDoAno\": \"Primavera\",\r\n    \"dadosProducao\": [\r\n        {\"dataColheita\": \"2022-05-10\", \"qtdProduzida\": 20, \"listaFertilizantes\": [\"CibraMix\", \"Nitrocap\"]}\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/colheita/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"colheita",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/colheita/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"colheita",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DadosClimaticos",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/dadosclimaticos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dadosclimaticos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataLocal\": \"2020-06-12\",\r\n    \"temperaturaGraus\": 21.5,\r\n    \"umidade\": 7,\r\n    \"precipitacao\": 2.4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/dadosclimaticos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dadosclimaticos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataLocal\": \"2020-06-12\",\r\n    \"temperaturaGraus\": 21.5,\r\n    \"umidade\": 7,\r\n    \"precipitacao\": 2.4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/dadosclimaticos/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dadosclimaticos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/dadosclimaticos/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dadosclimaticos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DadosProducao",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/dadosproducao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dadosproducao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataColheita\": \"2021-05-11\",\r\n    \"qtdProduzida\": 4,\r\n    \"listaFertilizantes\": [\r\n        \"nitrogênio\",\r\n        \"fósforo\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/dadosproducao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dadosproducao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataColheita\": \"2021-05-11\",\r\n    \"qtdProduzida\": 4,\r\n    \"listaFertilizantes\": [\r\n        \"nitrogênio\",\r\n        \"fósforo\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/dadosproducao/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dadosproducao",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/dadosproducao/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dadosproducao",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Predicao",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/predicao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"predicao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataPredicao\": \"2023-12-12\",\r\n    \"qtdPrevista\": 40\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/predicao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"predicao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataPredicao\": \"2023-12-12\",\r\n    \"qtdPrevista\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/predicao/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"predicao",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/predicao/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"predicao",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

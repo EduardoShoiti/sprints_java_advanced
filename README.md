@@ -47,7 +47,7 @@
 
 <hr />
 
-![Diagrama de clases]()
+![Diagrama de clases](https://github.com/EduardoShoiti/sprints_java_advanced/blob/master/diagrama.png)
 
 <hr />
 

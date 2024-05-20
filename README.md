@@ -147,7 +147,7 @@ https://youtu.be/53bSlx2rWhEhttps://youtu.be/53bSlx2rWhE
 Foi melhorado a parte técnica do projeto também, fizemos a correção do Bean Validation de acordo com nossas regras de negócio, para exemplificar, utilizamos anotações como:
 - @NotBlank
 - @NotNull
-- 
+
 **Link do Vídeo**
 https://youtu.be/bR7U1PkvOiQ?si=shLN1yIePw1j7Hxs
 

@@ -128,6 +128,11 @@
 
 <hr />
 
+![Teste](https://github.com/EduardoShoiti/sprints_java_advanced/blob/master/Picture1.jpg)
+![Teste Requisicao](https://github.com/EduardoShoiti/sprints_java_advanced/blob/master/Picture2.jpg)
+
+<hr />
+
 [Json de todos os testes Postman](https://github.com/EduardoShoiti/sprints_java_advanced/blob/master/Endpoint%20-%20Sprint%201.postman_collection.json)
 
 <hr />
@@ -135,3 +140,14 @@
 **Link do Vídeo pitch**
 
 https://youtu.be/53bSlx2rWhEhttps://youtu.be/53bSlx2rWhE 
+
+<hr>
+
+**Melhorias do projeto:**
+Foi melhorado a parte técnica do projeto também, fizemos a correção do Bean Validation de acordo com nossas regras de negócio, para exemplificar, utilizamos anotações como:
+- @NotBlank
+- @NotNull
+- 
+**Link do Vídeo**
+https://youtu.be/bR7U1PkvOiQ?si=shLN1yIePw1j7Hxs
+

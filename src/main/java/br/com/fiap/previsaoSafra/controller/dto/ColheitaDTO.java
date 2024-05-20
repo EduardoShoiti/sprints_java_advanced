@@ -2,7 +2,9 @@ package br.com.fiap.previsaoSafra.controller.dto;
 
 
 import br.com.fiap.previsaoSafra.model.DadosProducao;
+import br.com.fiap.previsaoSafra.model.Fazenda;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import java.util.List;
@@ -11,9 +13,16 @@ import java.util.List;
 public class ColheitaDTO {
 
     private Long id;
+
+    @NotBlank
     private String nome;
+
+    @NotBlank
     private String tipo;
+
+    @NotBlank
     private String estacaoDoAno;
+
     private List<DadosProducao> dadosProducao;
 
     public Long getId() {return id;}

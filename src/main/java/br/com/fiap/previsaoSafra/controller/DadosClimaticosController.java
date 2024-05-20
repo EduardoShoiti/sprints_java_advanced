@@ -7,6 +7,7 @@ import br.com.fiap.previsaoSafra.model.DadosProducao;
 import br.com.fiap.previsaoSafra.service.DadosClimaticosService;
 import br.com.fiap.previsaoSafra.service.DadosProducaoService;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class DadosClimaticosController {
     @Autowired
     public DadosClimaticosController(DadosClimaticosService dadosClimaticosService) {this.dadosClimaticosService = dadosClimaticosService; }
     @PostMapping
-    public ResponseEntity<DadosClimaticos> cadastrarDadosClimaticos(@RequestBody DadosClimaticos dadosClimaticos){
+    public ResponseEntity<DadosClimaticos> cadastrarDadosClimaticos(@Valid @RequestBody DadosClimaticosDTO dadosClimaticos){
         DadosClimaticos novoDadosClimaticos = dadosClimaticosService.cadastrarDadosClimaticos(dadosClimaticos);
         return ResponseEntity.ok(novoDadosClimaticos);
 

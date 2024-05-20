@@ -7,6 +7,7 @@ import br.com.fiap.previsaoSafra.model.Predicao;
 import br.com.fiap.previsaoSafra.service.FazendaService;
 import br.com.fiap.previsaoSafra.service.PredicaoService;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class PredicaoController {
     public PredicaoController(PredicaoService predicaoService) { this.predicaoService = predicaoService; }
 
     @PostMapping
-    public ResponseEntity<Predicao> cadastrarPredicao(@RequestBody Predicao predicao) {
+    public ResponseEntity<Predicao> cadastrarPredicao(@Valid @RequestBody PredicaoDTO predicao) {
         Predicao novaPredicao = predicaoService.cadastrarPredicao(predicao);
         return ResponseEntity.ok(novaPredicao);
     }

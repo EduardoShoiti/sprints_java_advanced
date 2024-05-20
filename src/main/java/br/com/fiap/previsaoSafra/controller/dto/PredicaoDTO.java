@@ -4,6 +4,8 @@ import br.com.fiap.previsaoSafra.model.Colheita;
 import br.com.fiap.previsaoSafra.model.Fazenda;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -11,9 +13,15 @@ import java.time.LocalDate;
 @Data
 public class PredicaoDTO {
     private Long id;
+
     private Colheita colheita;
+
     private Fazenda fazenda;
+
+    @NotBlank
     private LocalDate dataPredicao;
+
+    @NotNull
     private Integer qtdPrevista;
 
     public Long getId() {

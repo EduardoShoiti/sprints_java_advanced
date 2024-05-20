@@ -8,6 +8,7 @@ import br.com.fiap.previsaoSafra.repository.ColheitaRepository;
 import br.com.fiap.previsaoSafra.service.ColheitaService;
 import br.com.fiap.previsaoSafra.service.FazendaService;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,7 @@ public class ColheitaController {
     public ColheitaController(ColheitaService colheitaService) { this.colheitaService = colheitaService; }
 
     @PostMapping
-    public ResponseEntity<Colheita> cadastrarColheita(@RequestBody Colheita colheita) {
+    public ResponseEntity<Colheita> cadastrarColheita(@Valid @RequestBody ColheitaDTO colheita) {
         Colheita novaColheita = colheitaService.cadastrarColheita(colheita);
         return ResponseEntity.ok(novaColheita);
     }

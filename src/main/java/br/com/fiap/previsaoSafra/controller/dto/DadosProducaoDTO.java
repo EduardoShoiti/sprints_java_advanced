@@ -1,6 +1,8 @@
 package br.com.fiap.previsaoSafra.controller.dto;
 
 import br.com.fiap.previsaoSafra.model.Colheita;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -10,8 +12,13 @@ import java.util.List;
 public class DadosProducaoDTO {
     private Long id;
     private Colheita colheita;
+
+    @NotBlank
     private LocalDate dataColheita;
+
+    @NotNull
     private Integer qtdProduzida;
+
     private List<String> listaFertilizantes;
 
     public Long getId() {

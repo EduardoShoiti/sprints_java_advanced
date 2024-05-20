@@ -18,7 +18,13 @@ public class DadosClimaticosService {
     @Autowired
     private DadosClimaticosRepository dadosClimaticosRepository;
 
-    public DadosClimaticos cadastrarDadosClimaticos(DadosClimaticos dadosClimaticos) {return dadosClimaticosRepository.save(dadosClimaticos); }
+    public DadosClimaticos cadastrarDadosClimaticos(DadosClimaticosDTO dadosClimaticosDTO) {
+        DadosClimaticos dadosClimaticos = new DadosClimaticos();
+        dadosClimaticos.setDataLocal(dadosClimaticosDTO.getDataLocal());
+        dadosClimaticos.setTemperaturaGraus(dadosClimaticosDTO.getTemperaturaGraus());
+        dadosClimaticos.setUmidade(dadosClimaticosDTO.getUmidade());
+        dadosClimaticos.setPrecipitacao(dadosClimaticosDTO.getPrecipitacao());
+        return dadosClimaticosRepository.save(dadosClimaticos); }
 
     public DadosClimaticos atualizarDadosClimaticos(Long id, DadosClimaticosDTO novoDadosClimaticos){
         Optional<DadosClimaticos> dadosClimaticosExiste= dadosClimaticosRepository.findById(id);

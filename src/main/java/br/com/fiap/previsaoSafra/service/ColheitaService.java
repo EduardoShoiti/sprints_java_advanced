@@ -17,7 +17,12 @@ public class ColheitaService {
     private ColheitaRepository colheitaRepository;
 
     //    Cadastrar Colheita
-    public Colheita cadastrarColheita(Colheita colheita) { return colheitaRepository.save(colheita); }
+    public Colheita cadastrarColheita(ColheitaDTO colheitaDTO) {
+        Colheita colheita = new Colheita();
+        colheita.setNome(colheitaDTO.getNome());
+        colheita.setTipo(colheitaDTO.getTipo());
+        colheita.setEstacaoDoAno(colheitaDTO.getEstacaoDoAno());
+        return colheitaRepository.save(colheita); }
 
     //    Atualizar Colheita
     public Colheita atualizarColheita(Long id, ColheitaDTO novaColheita) {

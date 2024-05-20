@@ -16,7 +16,13 @@ public class FazendaService {
     private FazendaRepository fazendaRepository;
 
 //    Cadastrar fazenda
-    public Fazenda cadastrarFazenda(Fazenda fazenda) { return fazendaRepository.save(fazenda); }
+    public Fazenda cadastrarFazenda(FazendaDTO fazendaDTO) {
+        Fazenda fazenda = new Fazenda();
+        fazenda.setDono(fazendaDTO.getDono());
+        fazenda.setLatitude(fazendaDTO.getLatitude());
+        fazenda.setLongitude(fazendaDTO.getLongitude());
+        fazenda.setTamanho(fazendaDTO.getTamanho());
+        return fazendaRepository.save(fazenda); }
 
 //    Atualizar fazenda
     public Fazenda atualizarFazenda(Long id, FazendaDTO novaFazenda) {

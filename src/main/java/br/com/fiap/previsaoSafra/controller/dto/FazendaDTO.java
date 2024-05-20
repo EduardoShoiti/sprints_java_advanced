@@ -3,6 +3,8 @@ package br.com.fiap.previsaoSafra.controller.dto;
 import br.com.fiap.previsaoSafra.model.Colheita;
 import br.com.fiap.previsaoSafra.model.DadosClimaticos;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.util.List;
@@ -10,11 +12,21 @@ import java.util.List;
 @Data
 public class FazendaDTO {
     private Long id;
+
+    @NotBlank
     private String dono;
+
+    @NotBlank
     private String latitude;
+
+    @NotBlank
     private String longitude;
+
+    @NotNull
     private Integer tamanho;
+
     private List<Colheita> listaColheita;
+
     private List<DadosClimaticos> dadosClimaticos;
 
     public Long getId() {

@@ -1,6 +1,8 @@
 package br.com.fiap.previsaoSafra.controller.dto;
 
 import br.com.fiap.previsaoSafra.model.Fazenda;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -9,10 +11,19 @@ import java.time.LocalDate;
 public class DadosClimaticosDTO {
 
     private Long id;
+
+    @NotBlank
     private LocalDate dataLocal;
+
+    @NotNull
     private Double temperaturaGraus;
+
+    @NotNull
     private Integer umidade;
+
+    @NotNull
     private Double precipitacao;
+
     private Fazenda fazenda;
 
     public Long getId() {

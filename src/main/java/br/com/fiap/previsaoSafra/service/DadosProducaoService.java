@@ -15,7 +15,11 @@ public class DadosProducaoService {
     @Autowired
     private DadosProducaoRepository dadosProducaoRepository;
 
-    public DadosProducao cadastrarDadosProducao(DadosProducao dadosProducao) {return dadosProducaoRepository.save(dadosProducao); }
+    public DadosProducao cadastrarDadosProducao(DadosProducaoDTO dadosProducaoDTO) {
+        DadosProducao dadosProducao = new DadosProducao();
+        dadosProducao.setDataColheita(dadosProducaoDTO.getDataColheita());
+        dadosProducao.setQtdProduzida(dadosProducaoDTO.getQtdProduzida());
+        return dadosProducaoRepository.save(dadosProducao); }
 
     public DadosProducao atualizarDadosProducao(Long id, DadosProducaoDTO novoDadosProducao){
         Optional<DadosProducao> dadosProducaoExiste= dadosProducaoRepository.findById(id);

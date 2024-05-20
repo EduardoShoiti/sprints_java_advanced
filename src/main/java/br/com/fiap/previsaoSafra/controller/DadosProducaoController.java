@@ -4,6 +4,7 @@ import br.com.fiap.previsaoSafra.controller.dto.DadosProducaoDTO;
 import br.com.fiap.previsaoSafra.model.DadosProducao;
 import br.com.fiap.previsaoSafra.service.DadosProducaoService;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class DadosProducaoController {
     @Autowired
     public DadosProducaoController(DadosProducaoService dadosProducaoService) {this.dadosProducaoService = dadosProducaoService; }
     @PostMapping
-    public ResponseEntity<DadosProducao>cadastrarDadosProducao(@RequestBody DadosProducao dadosProducao){
+    public ResponseEntity<DadosProducao>cadastrarDadosProducao(@Valid @RequestBody DadosProducaoDTO dadosProducao){
         DadosProducao novoDadosProducao = dadosProducaoService.cadastrarDadosProducao(dadosProducao);
         return ResponseEntity.ok(novoDadosProducao);
 

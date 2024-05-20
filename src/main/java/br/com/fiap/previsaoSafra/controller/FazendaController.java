@@ -4,6 +4,7 @@ import br.com.fiap.previsaoSafra.controller.dto.FazendaDTO;
 import br.com.fiap.previsaoSafra.model.Fazenda;
 import br.com.fiap.previsaoSafra.service.FazendaService;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class FazendaController {
     public FazendaController(FazendaService fazendaService) { this.fazendaService = fazendaService; }
 
     @PostMapping
-    public ResponseEntity<Fazenda> cadastrarFazenda(@RequestBody Fazenda fazenda) {
+    public ResponseEntity<Fazenda> cadastrarFazenda(@Valid @RequestBody FazendaDTO fazenda) {
         Fazenda novaFazenda = fazendaService.cadastrarFazenda(fazenda);
         return ResponseEntity.ok(novaFazenda);
     }

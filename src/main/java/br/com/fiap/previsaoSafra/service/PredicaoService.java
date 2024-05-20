@@ -18,7 +18,11 @@ public class PredicaoService {
     private PredicaoRepository predicaoRepository;
 
     //    Cadastrar predicao
-    public Predicao cadastrarPredicao(Predicao predicao) { return predicaoRepository.save(predicao); }
+    public Predicao cadastrarPredicao(PredicaoDTO predicaoDTO) {
+        Predicao predicao = new Predicao();
+        predicao.setDataPredicao(predicaoDTO.getDataPredicao());
+        predicao.setQtdPrevista(predicaoDTO.getQtdPrevista());
+        return predicaoRepository.save(predicao); }
 
     //    Atualizar predicao
     public Predicao atualizarPredicao(Long id, PredicaoDTO novaPredicao) {

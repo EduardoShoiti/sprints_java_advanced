@@ -10,7 +10,7 @@
 
 <hr />
 
-### Cronograma de atividades
+### Cronograma de atividades - Sprint 1
 **Compliance e Quality Assurance:**
 - Responsável: Daniele Vargas
 - Prazo de entrega: 10/04/2024
@@ -48,6 +48,45 @@
 - Prazo cumprido. 
 
 <hr />
+
+### Cronograma de atividades - Sprint 2
+**Compliance e Quality Assurance:**
+- Responsável: Daniele Vargas
+- Prazo de entrega: 17/05/2024
+- Prazo cumprido.
+
+**Banco de Dados**
+- Responsável: Marcela Moreira e Nathalia Braga
+- Prazo de entrega: 18/05/2024
+- Prazo cumprido.
+
+**DevOps Tools e Cloud Computing**
+- Responsável: Marcos Henrique
+- Prazo de entrega: 19/05/2024
+- Prazo cumprido.
+
+**Distruptive Architectures**
+- Responsável: Eduardo Shoiti
+- Prazo de entrega: 16/05/2024
+- Prazo cumprido.
+
+**Java Advanced**
+- Responsável: Eduardo Shoiti e Daniele Vargas
+- Prazo de entrega: 19/05/2024
+- Prazo cumprido.
+
+**Mobile App Development**
+- Responsável: Eduardo Shoiti e Marcela Moreira
+- Prazo de entrega: 11/05/2024
+- Prazo cumprido.
+
+
+**Development with .NET**
+- Responsável: Nathalia Braga
+- Prazo de entrega: 19/05/2024
+- Prazo cumprido.
+
+  <hr>
 
 ![Diagrama de clases](https://github.com/EduardoShoiti/sprints_java_advanced/blob/master/diagrama.png)
 
